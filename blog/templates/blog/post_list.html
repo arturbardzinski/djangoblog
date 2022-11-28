@@ -11,10 +11,15 @@
         <h3>Autor: Artur</h3>
         <h4>Wszelkie prawa zastrzezone</h4>
     </div>
+    {% comment "Komentarz autora" %}
+    Tutaj lista postów
+    {% endcomment %}
+    {% for post in posts % }
     <div>
-        <p>Test tekst</p>
-        <em>Wyróżnienie</em>
-        <a href="https://google.pl">LINK GOOGLE</a>
+        <p>Opublikowany: {{ post.published_date }}</p>
+        <h2><a href="">{{ post.title }}</a> </h2>
+        <em>{{ post.text|linebreaksbr }}</em>
     </div>
+    {% endfor %}
 </body>
 </html>
